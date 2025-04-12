@@ -4,13 +4,14 @@ import FootprintIcon from './icons/footprint'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
   display: inline-flex;
   align-items: center;
   height: 30px;
   line-height: 20px;
   padding: 10px;
+  letter-spacing: -0.02em;
 
   > svg {
     transition: 200ms ease;
@@ -29,8 +30,8 @@ const Logo = () => {
         <FootprintIcon fill={useColorModeValue('#111111', '#f1f1f1')} />
         <Text
           color={useColorModeValue('gray.800', 'gray.100')}
-          fontFamily='M PLUS Rounded 1c", sans-serif'
-          fontWeight="bold"
+          fontFamily="'Voyage', serif"
+          fontWeight={400}
           ml={3}
         >
           Erica Xu

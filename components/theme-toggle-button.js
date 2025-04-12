@@ -17,12 +17,15 @@ const ThemeToggleButton = () => {
       >
         <IconButton
           aria-label="Toggle theme"
-          bg={useColorModeValue('gray.200', 'gray.800')}
+          bg="transparent"
+          border="1px solid"
+          borderColor={useColorModeValue('gray.300', 'gray.600')}
           color={useColorModeValue('gray.800', 'gray.200')}
+          borderRadius="md"
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
           _hover={{
-            bg: useColorModeValue('gray.300', 'gray.700')
+            bg: useColorModeValue('gray.200', 'gray.700')
           }}
         ></IconButton>
       </motion.div>

@@ -73,11 +73,24 @@ export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
 
       <Box p={3} borderTop="1px solid" borderColor={useColorModeValue('#e5e5e5', '#444444')}>
         <LinkOverlay as="div" href={`/projects/${id}`}>
-          <Text mt={1} fontSize="md" fontWeight="semibold" color={useColorModeValue('#111111', '#f1f1f1')}>
+          <Text 
+            mt={1} 
+            fontSize="18px" 
+            fontWeight={400}
+            letterSpacing="-0.01em"
+            color={useColorModeValue('#111111', '#f1f1f1')}
+            fontFamily="'Voyage', serif"
+          >
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
+        <Text 
+          fontSize="14px" 
+          fontWeight={300}
+          letterSpacing="0"
+          color={useColorModeValue('gray.600', 'gray.400')}
+          fontFamily="'Satoshi', sans-serif"
+        >
           {children}
         </Text>
       </Box>

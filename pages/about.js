@@ -43,7 +43,17 @@ const About = () => (
 
       {/* Descriptive text blocks */}
       <Section>
-        <Heading as="h3" variant="section-title" mb={4} color={useColorModeValue('gray.800', 'white')}>
+        <Heading 
+          as="h3" 
+          variant="section-title" 
+          mb={4} 
+          fontSize={24}
+          fontWeight={400}
+          letterSpacing="-0.02em"
+          color={useColorModeValue('gray.800', 'white')}
+          fontFamily="'Voyage', serif"
+          textTransform="none"
+        >
           Who I Am
         </Heading>
         <P>
@@ -52,7 +62,17 @@ const About = () => (
       </Section>
 
       <Section delay={0.1}>
-        <Heading as="h3" variant="section-title" mb={4} color={useColorModeValue('gray.800', 'white')}>
+        <Heading 
+          as="h3" 
+          variant="section-title" 
+          mb={4} 
+          fontSize={24}
+          fontWeight={400}
+          letterSpacing="-0.02em"
+          color={useColorModeValue('gray.800', 'white')}
+          fontFamily="'Voyage', serif"
+          textTransform="none"
+        >
           My Approach
         </Heading>
         <P>
@@ -61,20 +81,37 @@ const About = () => (
       </Section>
 
       <Section delay={0.2}>
-        <Heading as="h3" variant="section-title" mb={4} color={useColorModeValue('gray.800', 'white')}>
+        <Heading 
+          as="h3" 
+          variant="section-title" 
+          mb={4} 
+          fontSize={24}
+          fontWeight={400}
+          letterSpacing="-0.02em"
+          color={useColorModeValue('gray.800', 'white')}
+          fontFamily="'Voyage', serif"
+          textTransform="none"
+        >
           Tools & Skills
         </Heading>
-        <Flex flexWrap="wrap" gap={2} mb={8}>
+        <Flex flexWrap="wrap" gap={3} mb={8}>
           {skills.map((skill, index) => (
             <Tag 
               key={index} 
               size="md" 
-              bg={useColorModeValue('gray.200', 'gray.700')}
+              bg="transparent"
               color={useColorModeValue('gray.800', 'gray.200')}
-              borderRadius="full"
-              px={3}
+              borderRadius="none"
+              borderBottom="1px solid"
+              borderColor={useColorModeValue('gray.300', 'gray.600')}
+              fontWeight={300}
+              letterSpacing="0.02em"
+              textTransform="uppercase"
+              fontFamily="'Satoshi', sans-serif"
+              fontSize="13px"
+              mb={3}
+              px={2}
               py={1}
-              mb={2}
             >
               {skill.name}
             </Tag>

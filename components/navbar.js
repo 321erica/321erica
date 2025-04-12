@@ -31,6 +31,11 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       bg={active ? activeBackground : undefined}
       color={active ? useColorModeValue('gray.900', 'white') : inactiveColor}
       borderRadius="md"
+      fontWeight={400}
+      letterSpacing="0"
+      fontSize="16px"
+      fontFamily="'Satoshi', sans-serif"
+      textTransform="uppercase"
       target={target}
       {...props}
     >
@@ -66,7 +71,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+          <Heading as="h1" size="lg" letterSpacing="-0.03em" fontWeight={400} fontFamily="'Voyage', serif">
             <Logo />
           </Heading>
         </Flex>
@@ -78,6 +83,7 @@ const Navbar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
+          spacing={6}
         >
           <LinkItem href="/" path={path}>
             Projects
@@ -108,6 +114,11 @@ const Navbar = props => {
                 <MenuItem 
                   as={MenuLink} 
                   href="/"
+                  fontWeight={400}
+                  fontFamily="'Satoshi', sans-serif"
+                  textTransform="uppercase"
+                  letterSpacing="0"
+                  fontSize="14px"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}
@@ -117,6 +128,11 @@ const Navbar = props => {
                 <MenuItem 
                   as={MenuLink} 
                   href="/sketchbook"
+                  fontWeight={400}
+                  fontFamily="'Satoshi', sans-serif"
+                  textTransform="uppercase"
+                  letterSpacing="0"
+                  fontSize="14px"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}
@@ -126,6 +142,11 @@ const Navbar = props => {
                 <MenuItem 
                   as={MenuLink} 
                   href="/about"
+                  fontWeight={400}
+                  fontFamily="'Satoshi', sans-serif"
+                  textTransform="uppercase"
+                  letterSpacing="0"
+                  fontSize="14px"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}
