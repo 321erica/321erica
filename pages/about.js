@@ -3,6 +3,7 @@ import { WorkImage } from '../components/work'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import P from '../components/paragraph'
+import PageHeader from '../components/page-header'
 
 // List of skills/tools
 const skills = [
@@ -23,11 +24,7 @@ const skills = [
 const About = () => (
   <Layout title="About">
     <Container maxW="container.md">
-      <Box mb={8}>
-        <Heading as="h1" fontSize={28} mb={4} color={useColorModeValue('gray.800', 'white')}>
-          About Me
-        </Heading>
-      </Box>
+      <PageHeader>About Me</PageHeader>
 
       {/* Project-style image (not a portrait) */}
       <Box 
@@ -84,7 +81,6 @@ const About = () => (
           ))}
         </Flex>
       </Section>
-
     </Container>
   </Layout>
 )

@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
-import { Container, Heading, SimpleGrid, Box, Text, useColorModeValue } from '@chakra-ui/react'
+import { Container, SimpleGrid, Box, Text, useColorModeValue } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import Section from '../../components/section'
 import { WorkImage } from '../../components/work'
 import P from '../../components/paragraph'
+import PageHeader from '../../components/page-header'
 
 // Example projects data (in a real app, this would be fetched from a database)
 const projects = {
@@ -66,7 +67,7 @@ const ProjectPage = () => {
     return (
       <Layout title="Project Not Found">
         <Container>
-          <Heading as="h1">Project not found</Heading>
+          <PageHeader>Project not found</PageHeader>
           <Text>The project you're looking for does not exist.</Text>
         </Container>
       </Layout>
@@ -76,10 +77,9 @@ const ProjectPage = () => {
   return (
     <Layout title={project.title}>
       <Container maxW="container.md">
+        <PageHeader>{project.title}</PageHeader>
+        
         <Box mb={8}>
-          <Heading as="h1" fontSize={28} mb={4} color={useColorModeValue('gray.800', 'white')}>
-            {project.title}
-          </Heading>
           <P>{project.description}</P>
         </Box>
 

@@ -22,6 +22,7 @@ import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
 import { ProjectGridItem } from '../components/project-grid-item'
 import { GridItemStyle } from '../components/grid-item'
+import PageHeader from '../components/page-header'
 
 // Import project thumbnails
 import thumbProject1 from '../public/images/works/inkdrop_eyecatch.png'
@@ -36,16 +37,7 @@ const Home = () => (
     <Container maxW="container.md">
       <GridItemStyle />
       
-      <Box 
-        display="flex" 
-        flexDirection="column" 
-        alignItems="center"
-        mb={8}
-      >
-        <Heading as="h1" fontSize={28} mb={6}>
-          My Portfolio
-        </Heading>
-      </Box>
+      <PageHeader>My Portfolio</PageHeader>
 
       <SimpleGrid columns={[1, 2, 3]} spacing={6}>
         <Section>

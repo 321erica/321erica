@@ -1,8 +1,9 @@
-import { Container, Heading, SimpleGrid, Box, useColorModeValue } from '@chakra-ui/react'
+import { Container, SimpleGrid, Box, useColorModeValue } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkImage } from '../components/work'
 import P from '../components/paragraph'
+import PageHeader from '../components/page-header'
 
 // Using work images as placeholder sketches
 const sketches = [
@@ -20,10 +21,9 @@ const sketches = [
 const Sketchbook = () => (
   <Layout title="Sketchbook">
     <Container maxW="container.md">
+      <PageHeader>Sketchbook</PageHeader>
+      
       <Box mb={8}>
-        <Heading as="h1" fontSize={28} mb={4} textAlign="center" color={useColorModeValue('gray.800', 'white')}>
-          Sketchbook
-        </Heading>
         <P>
           A collection of sketches, drawings, and visual explorations that inspire my work and document my creative process.
         </P>
