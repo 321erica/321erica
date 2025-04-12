@@ -10,6 +10,7 @@ import { BuyButton } from '../../components/payhip'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 import WallpaperThumbnailList from '../../components/wallpaper-thumbnail-list'
+import WallpaperImage from '../../components/wallpaper-image'
 
 const Wallpaper = () => (
   <Layout title="Cherry blossom view and coding">
@@ -28,7 +29,6 @@ const Wallpaper = () => (
         align="center"
         my={4}
         p={4}
-        borderRadius="lg"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       >
         <Box mb={4}>
@@ -38,6 +38,16 @@ const Wallpaper = () => (
           </em>
         </Box>
         <BuyButton productId="65jPS" price={19} />
+      </Box>
+
+      <Box 
+        mb={10} 
+        overflow="hidden"
+        boxShadow="lg"
+        borderWidth="1px"
+        borderColor={useColorModeValue('#d1d1d1', '#444444')}
+      >
+        <WallpaperImage src={urlForMainImage()} alt="Cherry blossoms preview" />
       </Box>
 
       <AspectRatio maxW="640px" ratio={1.7} my={4}>

@@ -30,7 +30,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       p={2}
       bg={active ? activeBackground : undefined}
       color={active ? useColorModeValue('gray.900', 'white') : inactiveColor}
-      borderRadius="md"
+      borderRadius="0"
       fontWeight={400}
       letterSpacing="0"
       fontSize="16px"
@@ -106,10 +106,12 @@ const Navbar = props => {
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                borderRadius="0"
               />
               <MenuList 
                 bg={useColorModeValue('white', 'gray.800')}
                 borderColor={useColorModeValue('gray.300', 'gray.700')}
+                borderRadius="0"
               >
                 <MenuItem 
                   as={MenuLink} 
@@ -119,6 +121,7 @@ const Navbar = props => {
                   textTransform="uppercase"
                   letterSpacing="0"
                   fontSize="14px"
+                  borderRadius="0"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}
@@ -133,6 +136,7 @@ const Navbar = props => {
                   textTransform="uppercase"
                   letterSpacing="0"
                   fontSize="14px"
+                  borderRadius="0"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}
@@ -147,6 +151,7 @@ const Navbar = props => {
                   textTransform="uppercase"
                   letterSpacing="0"
                   fontSize="14px"
+                  borderRadius="0"
                   _hover={{
                     bg: useColorModeValue('gray.200', 'gray.700')
                   }}

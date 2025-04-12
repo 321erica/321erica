@@ -35,12 +35,19 @@ export const WorkGridItem = ({
       scroll={false}
       cursor="pointer"
     >
-      <Image
-        src={thumbnail}
-        alt={title}
-        className="grid-item-thumbnail"
-        placeholder="blur"
-      />
+      <Box 
+        overflow="hidden"
+        borderWidth="1px"
+        borderColor="gray.200"
+        _dark={{ borderColor: "gray.700" }}
+      >
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="grid-item-thumbnail"
+          placeholder="blur"
+        />
+      </Box>
       <LinkOverlay as="div" href={`/${category}/${id}`}>
         <Text mt={2} fontSize={20}>
           {title}
@@ -55,7 +62,7 @@ export const GridItemStyle = () => (
   <Global
     styles={`
       .grid-item-thumbnail {
-        border-radius: 12px;
+        border-radius: 0;
       }
     `}
   />

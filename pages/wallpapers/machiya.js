@@ -30,7 +30,6 @@ const Wallpaper = () => (
         align="center"
         my={4}
         p={4}
-        borderRadius="lg"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       >
         <Box mb={4}>

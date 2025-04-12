@@ -11,17 +11,12 @@ export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
       scroll={false}
       cursor="pointer"
       position="relative"
-      borderRadius="lg"
       overflow="hidden"
       transition="all 0.2s"
       bg={useColorModeValue('white', '#2c2c2c')}
       borderColor={useColorModeValue('#d1d1d1', '#444444')}
       borderWidth="1px"
       boxShadow="sm"
-      _hover={{
-        transform: 'scale(1.05)',
-        boxShadow: 'md'
-      }}
     >
       <Box 
         position="relative"
@@ -104,10 +99,6 @@ export const ProjectGridItemStyle = () => (
       .grid-item-thumbnail {
         border-radius: 0;
         transition: all 0.2s ease;
-      }
-      
-      .chakra-linkbox:hover .grid-item-thumbnail {
-        transform: scale(1.05);
       }
     `}
   />

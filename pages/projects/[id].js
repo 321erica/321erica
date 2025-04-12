@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
-import { Container, SimpleGrid, Box, Text, useColorModeValue } from '@chakra-ui/react'
+import { Container, Box, Text, useColorModeValue } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
-import Section from '../../components/section'
 import { WorkImage } from '../../components/work'
 import P from '../../components/paragraph'
 import PageHeader from '../../components/page-header'
+import MasonryGrid from '../../components/masonry-grid'
 
 // Example projects data (in a real app, this would be fetched from a database)
 const projects = {
@@ -58,6 +58,14 @@ const projects = {
   }
 }
 
+// Enhanced column layout for wider display
+const projectDetailColumns = {
+  default: 4, // 4 columns on large desktop
+  1100: 3,    // 3 columns on desktop
+  900: 2,     // 2 columns on medium screens
+  500: 1      // 1 column on small screens
+}
+
 const ProjectPage = () => {
   const router = useRouter()
   const { id } = router.query
@@ -76,33 +84,23 @@ const ProjectPage = () => {
 
   return (
     <Layout title={project.title}>
-      <Container maxW="container.md">
+      <Container>
         <PageHeader>{project.title}</PageHeader>
         
-        <Box mb={8}>
+        <Box mb={8} maxW="container.md">
           <P>{project.description}</P>
         </Box>
 
-        {/* Masonry layout for project images */}
-        <SimpleGrid 
-          columns={[1, 1, 2]} 
-          spacing={6}
-          mb={8}
-        >
+        {/* Using enhanced masonry layout for project images */}
+        <MasonryGrid columnCount={projectDetailColumns}>
           {project.images.map((src, index) => (
-            <Section key={index}>
-              <Box 
-                borderRadius="lg" 
-                overflow="hidden" 
-                borderWidth="1px"
-                borderColor={useColorModeValue('#d1d1d1', '#444444')}
-                boxShadow="sm"
-              >
-                <WorkImage src={src} alt={`${project.title} image ${index + 1}`} />
-              </Box>
-            </Section>
+            <WorkImage
+              key={index}
+              src={src}
+              alt={`${project.title} image ${index + 1}`}
+            />
           ))}
-        </SimpleGrid>
+        </MasonryGrid>
       </Container>
     </Layout>
   )

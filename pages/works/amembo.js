@@ -4,7 +4,6 @@ import {
   Link,
   List,
   ListItem,
-  SimpleGrid,
   UnorderedList,
   Heading,
   Center,
@@ -12,8 +11,16 @@ import {
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/work'
+import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
+import WorkImagesGallery from '../../components/work-images-gallery'
+
+// Standard column layout: 3 on desktop, 2 on medium, 1 on small
+const workDetailColumns = {
+  default: 3, // 3 columns on desktop
+  900: 2,     // 2 columns on medium screens
+  500: 1      // 1 column on small screens
+}
 
 const Work = () => (
   <Layout title="amembo">
@@ -91,12 +98,17 @@ const Work = () => (
         </ListItem>
       </UnorderedList>
 
-      <SimpleGrid columns={2} gap={2}>
-        <WorkImage src="/images/works/amembo_01.gif" alt="amembo" />
-        <WorkImage src="/images/works/amembo_02.gif" alt="amembo" />
-      </SimpleGrid>
-      <WorkImage src="/images/works/amembo_03.jpg" alt="amembo" />
-      <WorkImage src="/images/works/amembo_04.jpg" alt="amembo" />
+      {/* Using standard masonry layout for work images */}
+      <WorkImagesGallery
+        images={[
+          '/images/works/amembo_01.gif',
+          '/images/works/amembo_02.gif',
+          '/images/works/amembo_03.jpg',
+          '/images/works/amembo_04.jpg'
+        ]}
+        alt="amembo"
+        columnCount={workDetailColumns}
+      />
     </Container>
   </Layout>
 )

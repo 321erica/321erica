@@ -29,7 +29,6 @@ const About = () => (
       {/* Project-style image (not a portrait) */}
       <Box 
         mb={12} 
-        borderRadius="lg" 
         overflow="hidden"
         boxShadow="lg"
         borderWidth="1px"
@@ -101,7 +100,7 @@ const About = () => (
               size="md" 
               bg="transparent"
               color={useColorModeValue('gray.800', 'gray.200')}
-              borderRadius="none"
+              borderRadius="0"
               borderBottom="1px solid"
               borderColor={useColorModeValue('gray.300', 'gray.600')}
               fontWeight={300}

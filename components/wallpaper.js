@@ -18,7 +18,7 @@ export const Title = ({ children }) => (
 )
 
 export const WallpaperImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+  <Image w="full" src={src} alt={alt} mb={4} />
 )
 
 export const Meta = ({ children }) => (

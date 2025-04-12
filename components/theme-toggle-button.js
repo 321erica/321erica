@@ -21,7 +21,7 @@ const ThemeToggleButton = () => {
           border="1px solid"
           borderColor={useColorModeValue('gray.300', 'gray.600')}
           color={useColorModeValue('gray.800', 'gray.200')}
-          borderRadius="md"
+          borderRadius="0"
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
           _hover={{

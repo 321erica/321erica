@@ -2,8 +2,16 @@ import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
+import { GridItemStyle } from '../grid-item'
+import { useRouter } from 'next/router'
 
 const Main = ({ children, router }) => {
+  const currentRouter = useRouter()
+  const path = currentRouter.asPath
+  
+  // Use wider container for sketchbook and project detail pages
+  const isWiderContainer = path === '/sketchbook' || path.startsWith('/projects/') || path.startsWith('/works/')
+  
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -20,9 +28,10 @@ const Main = ({ children, router }) => {
         <title>Erica Xu - Homepage</title>
       </Head>
 
+      <GridItemStyle />
       <NavBar path={router.asPath} />
 
-      <Container maxW="container.md" pt={14}>
+      <Container maxW={isWiderContainer ? "1200px" : "container.md"} pt={14} px={isWiderContainer ? [2, 4] : 4}>
         {children}
 
         <Footer />
