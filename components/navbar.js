@@ -20,15 +20,17 @@ import ThemeToggleButton from './theme-toggle-button'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('gray.800', 'gray.100')
+  const activeBackground = useColorModeValue('gray.200', 'gray.700')
   return (
     <Link
       as={NextLink}
       href={href}
       scroll={false}
       p={2}
-      bg={active ? 'grassTeal' : undefined}
-      color={active ? '#202023' : inactiveColor}
+      bg={active ? activeBackground : undefined}
+      color={active ? useColorModeValue('gray.900', 'white') : inactiveColor}
+      borderRadius="md"
       target={target}
       {...props}
     >
@@ -49,9 +51,10 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('rgba(248, 248, 248, 0.8)', 'rgba(14, 14, 14, 0.8)')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={2}
+      borderBottom={useColorModeValue('1px solid #d1d1d1', '1px solid #444444')}
       {...props}
     >
       <Container
@@ -98,14 +101,35 @@ const Navbar = props => {
                 variant="outline"
                 aria-label="Options"
               />
-              <MenuList>
-                <MenuItem as={MenuLink} href="/">
+              <MenuList 
+                bg={useColorModeValue('white', 'gray.800')}
+                borderColor={useColorModeValue('gray.300', 'gray.700')}
+              >
+                <MenuItem 
+                  as={MenuLink} 
+                  href="/"
+                  _hover={{
+                    bg: useColorModeValue('gray.200', 'gray.700')
+                  }}
+                >
                   Projects
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/sketchbook">
+                <MenuItem 
+                  as={MenuLink} 
+                  href="/sketchbook"
+                  _hover={{
+                    bg: useColorModeValue('gray.200', 'gray.700')
+                  }}
+                >
                   Sketchbook
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/about">
+                <MenuItem 
+                  as={MenuLink} 
+                  href="/about"
+                  _hover={{
+                    bg: useColorModeValue('gray.200', 'gray.700')
+                  }}
+                >
                   About
                 </MenuItem>
               </MenuList>

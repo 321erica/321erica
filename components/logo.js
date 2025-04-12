@@ -26,9 +26,9 @@ const Logo = () => {
     (<Link href="/" scroll={false}>
 
       <LogoBox>
-        <FootprintIcon />
+        <FootprintIcon fill={useColorModeValue('#111111', '#f1f1f1')} />
         <Text
-          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+          color={useColorModeValue('gray.800', 'gray.100')}
           fontFamily='M PLUS Rounded 1c", sans-serif'
           fontWeight="bold"
           ml={3}

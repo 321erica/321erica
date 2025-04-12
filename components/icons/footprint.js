@@ -1,16 +1,18 @@
 const FootprintIcon = props => {
+  const { fill = 'currentColor', ...rest } = props
+  
   return (
     <svg
       width={20}
       height={20}
       className="w-5 inline-block transition-transform group-hover:rotate-[20deg]"
       viewBox="0 0 40 40"
-      fill="currentColor"
-      {...props}
+      fill={fill}
+      {...rest}
     >
       <g transform="matrix(1.07541,0,0,1.1001,-1.05651,-0.978215)">
         <path
-          fill="currentColor"
+          fill={fill}
           d="M13.319,4.13C13.319,4.13 10.313,4.08 9.501,9.535C9.133,13.546 12.568,15.516 14.12,15.497C15.556,15.495 17.638,14.151 17.486,9.765C17.334,5.38 14.98,4.15 13.319,4.13"
         />
       </g>
